@@ -41,7 +41,7 @@ namespace Complete
             var emailConfig = new EmailConfiguration();
             Configuration.Bind("Email", emailConfig);
             services.AddSingleton(emailConfig);
-
+          
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

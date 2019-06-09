@@ -7,11 +7,13 @@ namespace JsonConfiguration
     class Program
     {
         public static IConfigurationRoot Configuration { get; set; }
+
         static void Main(string[] args)
         {
             var builder = new ConfigurationBuilder()
                    .SetBasePath(Directory.GetCurrentDirectory())
-                   .AddJsonFile("awesomeConfig.json");
+                   .AddJsonFile("coolJson.json")
+                   .AddEnvironmentVariables("RANDOM_");
 
             Configuration = builder.Build();
 
@@ -24,6 +26,7 @@ namespace JsonConfiguration
             {
                 Console.WriteLine($"Key: {item.Key}, Value: {item.Value}");
             }
+
             Console.ReadKey();
         }
     }

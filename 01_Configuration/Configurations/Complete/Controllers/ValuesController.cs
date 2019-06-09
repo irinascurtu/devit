@@ -24,7 +24,10 @@ namespace Complete.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var pageSize = configuration.Value.PageSize;
+            var sortDirection = configuration.Value.SortDirection;
+
+            return new string[] { sortDirection, pageSize.ToString() };
         }
 
         // GET api/values/5

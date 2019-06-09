@@ -5,17 +5,16 @@ namespace EnvironmentConfiguration
 {
     class Program
     {
-
-        public IConfiguration Configuration { get; }
+        public static IConfigurationRoot Configuration { get; set; }
 
         static void Main(string[] args)
         {
-            var builder = new ConfigurationBuilder();
-             //  .AddEnvironmentVariables("RANDOM_");
-            // .AddEnvironmenVariables();
-           // Configuration = builder.Build();
+            var builder = new ConfigurationBuilder()              
+             .AddEnvironmentVariables();
+             //.AddEnvironmentVariables("RANDOM_");
+            Configuration = builder.Build();
 
-          //  Console.WriteLine(Configuration["RANDOM_VALUE"]);
+            Console.WriteLine(Configuration["RANDOM_OTHER"]);
         }
     }
 }

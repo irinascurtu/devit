@@ -15,6 +15,14 @@ namespace Complete.Controllers
         public EmailController(EmailConfiguration config)
         {
             this.config = config;
-        }       
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<string>> Get()
+        {
+            var pageSize = config.SenderEmail;
+
+            return new string[] { "ds", "ffa" };
+        }
     }
 }

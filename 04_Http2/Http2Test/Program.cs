@@ -24,9 +24,11 @@ namespace Http2Test
                 {
                     options.ListenLocalhost(5001, listenOptions =>
                     {
-                        listenOptions.Protocols = HttpProtocols.Http2;
+                        listenOptions.Protocols = HttpProtocols.Http1AndHttp2;
                         listenOptions.UseHttps();
+                      
                     });
+                    options.AddServerHeader = false;                   
                 })
                 .UseStartup<Startup>();
 

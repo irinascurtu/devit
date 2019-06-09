@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using MiddlewareApiExample.Middlewares;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace ReceivingApp
+namespace MiddlewareApiExample
 {
-    public class Startup
+
+    public class StartupRequestLimiter
     {
-        public Startup(IConfiguration configuration)
+        public StartupRequestLimiter(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -35,13 +34,8 @@ namespace ReceivingApp
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
+            app.UseMiddleware<LimiterMiddleware>();
             app.UseMvc();
         }
     }

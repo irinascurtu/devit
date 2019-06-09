@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompleteProject", "CompleteProject\CompleteProject.csproj", "{E414F899-B9A0-4342-AEFB-AFE84D599362}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompleteForEnvironments", "CompleteProject\CompleteForEnvironments.csproj", "{E414F899-B9A0-4342-AEFB-AFE84D599362}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Complete", "Complete\Complete.csproj", "{055FAF0F-01A5-4CC9-B3D7-C2A6E1618C8C}"
 EndProject
@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WConfigFromJson", "WConfigFromJson\WConfigFromJson.csproj", "{6FF42EAC-2200-424C-970E-1299E7F5ED68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{C80153E2-7ABC-43BB-9B74-37963EBF30B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C80153E2-7ABC-43BB-9B74-37963EBF30B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C80153E2-7ABC-43BB-9B74-37963EBF30B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF42EAC-2200-424C-970E-1299E7F5ED68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF42EAC-2200-424C-970E-1299E7F5ED68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF42EAC-2200-424C-970E-1299E7F5ED68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF42EAC-2200-424C-970E-1299E7F5ED68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
