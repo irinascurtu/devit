@@ -23,5 +23,10 @@ namespace Middleware.MiddlewareExtensions
         {
             return application.UseMiddleware<Greetings>();
         }
+
+        public static IApplicationBuilder UseRequestCultureMiddleware(this IApplicationBuilder application)
+        {
+            return application.UseMiddleware<RequestCultureMiddleware>();
+        }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Middleware.MiddlewareExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,10 +41,11 @@ namespace MiddlewareApiExample
                 app.UseHsts();
             }
 
+            // app.Use(GreetingMiddleware);
+           
 
-            app.Use(GreetingMiddleware);
+            app.UseGreetingsMiddleware();
             app.Use(SayByeToPeople);
-          
             app.UseMvc();
         }
 
@@ -53,15 +55,7 @@ namespace MiddlewareApiExample
             return async ctx =>
             {
                 await ctx.Response.WriteAsync("get only THE hello!");
-               // await next(ctx);
-                //if (ctx.Request.Path.StartsWithSegments("/hello"))
-                //{
-                //    await ctx.Response.WriteAsync("hello you!");
-                //}
-                //else
-                //{
-                //    await next(ctx);
-                //}
+
             };
         }
 
@@ -70,7 +64,6 @@ namespace MiddlewareApiExample
             return async ctx =>
             {
                 await ctx.Response.WriteAsync("\n buh bye!");
-
             };
         }
     }

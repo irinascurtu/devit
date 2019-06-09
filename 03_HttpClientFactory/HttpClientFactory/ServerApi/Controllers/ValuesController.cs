@@ -35,6 +35,7 @@ namespace ServerApi.Controllers
         //respond to application/json
         [HttpGet]
         [Consumes("custom/json")]
+        //[Produces("xxml")]
         public ActionResult<IEnumerable<string>> GetAnZList()
         {
             var result = new List<string>();

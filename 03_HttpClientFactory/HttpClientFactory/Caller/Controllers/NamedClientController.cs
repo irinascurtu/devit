@@ -20,7 +20,8 @@ namespace CallerApp.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> GetAsync()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, "repos/aspnet/docs/pulls");
+            var request = new HttpRequestMessage(HttpMethod.Get,
+                "repos/aspnet/docs/pulls");
             
             var client = clientFactory.CreateClient("github");
 

@@ -49,7 +49,7 @@ namespace MiddlewareApiExample
             //    });
             #endregion
 
-            #region MapWhen
+            //#region MapWhen
             ////https://localhost:53285/api/values?branch=coolbranch
             app.MapWhen(context => context.Request.Query.ContainsKey("branch"), HandleBranchWithMapWhen);
             // app.MapWhen(context => context.Request.Query.ContainsKey("branch") && context.Request.Query["branch"] == "coolbranch", HandleBranchWithMapWhen);
@@ -60,7 +60,7 @@ namespace MiddlewareApiExample
                 await next();
             });
 
-            #endregion
+            //#endregion
 
             app.UseMvc();
         }

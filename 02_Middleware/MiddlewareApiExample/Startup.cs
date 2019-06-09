@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Middleware.MiddlewareExtensions;
 using Middleware.Middlewares;
 using MiddlewareApiExample.Middlewares;
 
@@ -35,6 +37,9 @@ namespace MiddlewareApiExample
                 options.IncludeSubDomains = true;
                 options.MaxAge = TimeSpan.FromDays(60);
             });
+
+            services.Configure<RequestCultureOptions>(Configuration.GetSection("RequestCultureOptions"));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,12 +61,14 @@ namespace MiddlewareApiExample
             app.UseStatusCodePagesWithRedirects("/error/{0}");
             app.UseStatusCodePagesWithReExecute("/error/{0}");
 
-
-            app.UseCookiePolicy();
+               app.UseCookiePolicy();
             // app.UseStaticFiles();
             // app.UseAuthentication();
             // app.UseSecurityHeadersMiddleware();
-            app.Use(CheckUserAgent);
+
+            app.UseRequestCultureMiddleware();
+
+            //app.Use(CheckUserAgent);
             app.UseMvc();
         }
 

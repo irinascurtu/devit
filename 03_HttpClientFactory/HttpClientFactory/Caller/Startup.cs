@@ -42,6 +42,8 @@ namespace Caller
 
             //typed
             services.AddHttpClient<MyAwesomeService>();
+
+
             //define the policy somewhere else or
             //polly stuff
             services.AddHttpClient<MyAwesomeService>().AddPolicyHandler(Policy.TimeoutAsync<HttpResponseMessage>(TimeSpan.FromSeconds(10)));

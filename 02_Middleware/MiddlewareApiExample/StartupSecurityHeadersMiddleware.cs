@@ -35,7 +35,7 @@ namespace MiddlewareApiExample
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMiddleware<SecurityHeadersMiddleware>();
+           // app.UseMiddleware<SecurityHeadersMiddleware>();
             app.UseSecurityHeadersMiddleware();
             app.UseMvc();
         }
