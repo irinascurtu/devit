@@ -10,8 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Service1.Workers;
 
-namespace BackgroundService
+namespace Service1
 {
     public class Startup
     {
@@ -25,8 +26,7 @@ namespace BackgroundService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           //  services.AddHostedService<BackgroundService.TimedHostedService>();
-            services.AddSingleton<TimedHostedService>();
+            services.AddHostedService<Workerr>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

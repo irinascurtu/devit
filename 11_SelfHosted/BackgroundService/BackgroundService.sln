@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundService", "BackgroundService\BackgroundService.csproj", "{D50ABDB7-A280-4DE0-8F12-DF947B3964AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackgroundService", "BackgroundService\BackgroundService.csproj", "{D50ABDB7-A280-4DE0-8F12-DF947B3964AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service1", "Service1\Service1.csproj", "{76071C7E-A84D-4727-A355-ACFDD507B908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D50ABDB7-A280-4DE0-8F12-DF947B3964AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D50ABDB7-A280-4DE0-8F12-DF947B3964AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D50ABDB7-A280-4DE0-8F12-DF947B3964AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76071C7E-A84D-4727-A355-ACFDD507B908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76071C7E-A84D-4727-A355-ACFDD507B908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76071C7E-A84D-4727-A355-ACFDD507B908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76071C7E-A84D-4727-A355-ACFDD507B908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
