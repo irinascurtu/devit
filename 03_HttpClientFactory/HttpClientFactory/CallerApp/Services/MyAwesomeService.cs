@@ -28,10 +28,18 @@ namespace CallerApp
         {
             var response = await Client.GetAsync("api/values");
 
+            if (response.IsSuccessStatusCode)
+            {    //do sth
+                var result = await response.Content
+                    .ReadAsAsync<IEnumerable<string>>();
+
+            }
+            else
+            {
+                //deserialize this as different api stuff
+            }
             response.EnsureSuccessStatusCode();
-            //do sth
-            var result = await response.Content
-                .ReadAsAsync<IEnumerable<string>>();
+        
 
             return result;
         }
